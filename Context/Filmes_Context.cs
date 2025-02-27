@@ -19,6 +19,7 @@ namespace api_filmes_senai.Context
 
         public DbSet<Genero> Genero { get; set; }
         public DbSet<Filme> Filme { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 

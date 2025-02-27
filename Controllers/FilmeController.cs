@@ -89,13 +89,28 @@ namespace api_filmes_senai.Controllers
 
                 return NoContent();
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw;
+                return BadRequest(e.Message);
             }
         }
+        [HttpGet("ListarPorGenero/{id}")]
 
+        public IActionResult GetByGenero(Guid id)
+        {
+            try
+            {
+                List<Filme> listaDeFilmePorGenero = _filmeRepository.ListarPorGenero(id);
+
+                return Ok(listaDeFilmePorGenero);
+            }
+            catch (Exception e)
+            {
+
+               return BadRequest(e.Message);
+            }
+        }
             
 
     }
