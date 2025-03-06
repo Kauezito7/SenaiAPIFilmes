@@ -1,5 +1,6 @@
 ﻿using api_filmes_senai.Domains;
 using api_filmes_senai.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api_filmes_senai.Controllers
@@ -27,7 +28,7 @@ namespace api_filmes_senai.Controllers
                 return BadRequest(e.Message);
             }
         }
-
+        [Authorize]
         [HttpPost]
 
         public IActionResult Post(Genero novoGenero)
@@ -42,6 +43,12 @@ namespace api_filmes_senai.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        /// <summary>
+        /// Endpoint para buscar um Genero pelo seu Id
+        /// </summary>
+        /// <param name="id">Id do Genero buscado</param>
+        /// <returns>Genero Buscado</returns>
 
         [HttpGet("BuscarPorId/{id}")]
         public IActionResult GetById(Guid id)
