@@ -7,6 +7,8 @@ namespace api_filmes_senai.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
+    [Authorize]
     public class GeneroController : ControllerBase
     {
         private readonly IGeneroRepository _generoRepository;
@@ -28,7 +30,7 @@ namespace api_filmes_senai.Controllers
                 return BadRequest(e.Message);
             }
         }
-        [Authorize]
+        
         [HttpPost]
 
         public IActionResult Post(Genero novoGenero)
@@ -44,11 +46,13 @@ namespace api_filmes_senai.Controllers
             }
         }
 
+
         /// <summary>
         /// Endpoint para buscar um Genero pelo seu Id
         /// </summary>
         /// <param name="id">Id do Genero buscado</param>
         /// <returns>Genero Buscado</returns>
+
 
         [HttpGet("BuscarPorId/{id}")]
         public IActionResult GetById(Guid id)
@@ -96,10 +100,5 @@ namespace api_filmes_senai.Controllers
                 return BadRequest(e.Message);
             }
         }
-
-
-
-
-
     }
 }

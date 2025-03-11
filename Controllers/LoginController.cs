@@ -20,7 +20,7 @@ namespace api_filmes_senai.Controllers
         {
             _usuarioRepository = usuarioRepository;
         }
-        [HttpGet]
+        [HttpPost]
         public IActionResult Login(LoginDTO loginDTO)
         {
             try

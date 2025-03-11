@@ -17,6 +17,12 @@ namespace api_filmes_senai.Controllers
             _usuarioRepository = usuarioRepository;
         }
 
+        /// <summary>
+        /// Endopoint para Listar Genero
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+
         [HttpPost]
         public IActionResult Post(Usuario usuario)
         {
@@ -31,6 +37,12 @@ namespace api_filmes_senai.Controllers
                 return BadRequest(error.Message);
             }
         }
+
+        /// <summary>
+        /// Endpoint para buscar um genero pelo seu id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
 
         [HttpGet("{id}")]
         public IActionResult GetById(Guid id)
@@ -51,6 +63,13 @@ namespace api_filmes_senai.Controllers
                 return BadRequest(error.Message);
             }
         }
+
+        /// <summary>
+        /// Enpoint para atualizar genero cadastrado
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="senha"></param>
+        /// <returns></returns>
 
         [HttpGet("BuscarPorEmailESenha")]
         public IActionResult GetByEmailAndSenha (string email, string senha)
