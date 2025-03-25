@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>api_filmes_senai</name>
+    </assembly>
+    <members>
+        <member name="P:api_filmes_senai.Context.Filmes_Context.Genero">
+            <summary>
+            Define que as classes se tranformarao em tabelas no BD
+            </summary>
+        </member>
+        <member name="M:api_filmes_senai.Controllers.GeneroController.GetById(System.Guid)">
+            <summary>
+            Endpoint para buscar um Genero pelo seu Id
+            </summary>
+            <param name="id">Id do Genero buscado</param>
+            <returns>Genero Buscado</returns>
+        </member>
+        <member name="M:api_filmes_senai.Controllers.UsuarioController.Post(api_filmes_senai.Domains.Usuario)">
+            <summary>
+            Endopoint para Listar Genero
+            </summary>
+            <param name="usuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:api_filmes_senai.Controllers.UsuarioController.GetById(System.Guid)">
+            <summary>
+            Endpoint para buscar um genero pelo seu id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:api_filmes_senai.Controllers.UsuarioController.GetByEmailAndSenha(System.String,System.String)">
+            <summary>
+            Enpoint para atualizar genero cadastrado
+            </summary>
+            <param name="email"></param>
+            <param name="senha"></param>
+            <returns></returns>
+        </member>
+        <member name="P:api_filmes_senai.Domains.Filme.IdGenero">
+            <summary>
+            Referencia da tabela Genero
+            </summary>
+        </member>
+        <member name="T:api_filmes_senai.Interfaces.IGeneroRepository">
+            <summary>
+            Interface para Genero : Contrato
+            Toda classe que herdar(implementar) essa interface, devera implementar todos os metodos definidos aqui dentro 
+            </summary>
+        </member>
+        <member name="T:api_filmes_senai.Migrations.Db_Filmes">
+            <inheritdoc />
+        </member>
+        <member name="M:api_filmes_senai.Migrations.Db_Filmes.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:api_filmes_senai.Migrations.Db_Filmes.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:api_filmes_senai.Migrations.Db_Filmes.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:api_filmes_senai.Migrations.DbFilmes_V2">
+            <inheritdoc />
+        </member>
+        <member name="M:api_filmes_senai.Migrations.DbFilmes_V2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:api_filmes_senai.Migrations.DbFilmes_V2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:api_filmes_senai.Migrations.DbFilmes_V2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:api_filmes_senai.Repositories.GeneroRepository">
+            <summary>
+            Classe que vai implementar a interface IGeneroRepository
+            Ou seja, vamos implemntar os metodos, toda a logica dos metodos 
+            </summary>
+        </member>
+        <member name="F:api_filmes_senai.Repositories.GeneroRepository._context">
+            <summary>
+            Viavel privada e somente leitura que "guarda" od dados do contexto
+            </summary>
+        </member>
+        <member name="M:api_filmes_senai.Repositories.GeneroRepository.#ctor(api_filmes_senai.Context.Filmes_Context)">
+            <summary>
+            Contrutor do repositorio
+            Aqui, toda vez que o construtor for chamado, os dados do contexto estara disponiveis
+            </summary>
+            <param name="contexto">Dados do contexto</param>
+        </member>
+    </members>
+</doc>

@@ -28,7 +28,7 @@ namespace api_filmes_senai.Repositories
         }
 
         public Filme BuscarPorId(Guid id)
-        {
+        {   
             try
             {
                 Filme filmeBuscado = _context.Filme.Find(id)!;
@@ -56,11 +56,7 @@ namespace api_filmes_senai.Repositories
                 throw;
             }
         }
-
-        public void Cadastrar(Genero novoFilme)
-        {
-            throw new NotImplementedException();
-        }
+    
 
         public void Deletar(Guid id)
         {
